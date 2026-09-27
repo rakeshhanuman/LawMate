@@ -1,0 +1,163 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Castellar&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+    --lawmate: 214 100% 42%;
+    --lawmate-light: 214 100% 50%;
+    --lawmate-dark: 214 100% 30%;
+    
+    /* New color schemes for features */
+    --assessment-bg: 220 100% 97%;
+    --assessment-border: 220 100% 85%;
+    --assessment-text: 220 100% 25%;
+    
+    --templates-bg: 130 50% 97%;
+    --templates-border: 130 50% 85%;
+    --templates-text: 130 50% 25%;
+    
+    --guidance-bg: 25 100% 97%;
+    --guidance-border: 25 100% 85%;
+    --guidance-text: 25 100% 25%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Feature color classes */
+.assessment-theme {
+  background-color: hsl(var(--assessment-bg));
+  border-color: hsl(var(--assessment-border));
+  color: hsl(var(--assessment-text));
+}
+
+.templates-theme {
+  background-color: hsl(var(--templates-bg));
+  border-color: hsl(var(--templates-border));
+  color: hsl(var(--templates-text));
+}
+
+.guidance-theme {
+  background-color: hsl(var(--guidance-bg));
+  border-color: hsl(var(--guidance-border));
+  color: hsl(var(--guidance-text));
+}
+
+/* Markdown styling */
+.markdown-content h1,
+.prose h1 {
+  @apply text-2xl font-bold mt-6 mb-4;
+}
+
+.markdown-content h2,
+.prose h2 {
+  @apply text-xl font-bold mt-5 mb-3 text-lawmate;
+}
+
+.markdown-content h3,
+.prose h3 {
+  @apply text-lg font-semibold mt-4 mb-2;
+}
+
+.markdown-content p,
+.prose p {
+  @apply mb-4;
+}
+
+.markdown-content ul,
+.prose ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.markdown-content ol,
+.prose ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+.markdown-content li,
+.prose li {
+  @apply mb-1;
+}
+
+.markdown-content strong,
+.prose strong {
+  @apply font-bold;
+}
+
+.markdown-content em,
+.prose em {
+  @apply italic;
+}
+
+.markdown-content a,
+.prose a {
+  @apply text-lawmate underline;
+}
+
+.markdown-content blockquote,
+.prose blockquote {
+  @apply border-l-4 border-lawmate pl-4 italic my-4;
+}
+
+.markdown-content code,
+.prose code {
+  @apply bg-gray-100 rounded px-1 py-0.5;
+}
+
+.markdown-content pre,
+.prose pre {
+  @apply bg-gray-100 rounded p-3 overflow-x-auto my-4;
+}
